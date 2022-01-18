@@ -2,6 +2,7 @@ html{
   box-sizing:border-box;
   height: 100%;
   scroll-behavior: smooth;
+  overflow: hidden;
 }
 
 
@@ -23,7 +24,10 @@ font-size: 16px;
 line-height: 1.5;
 background-color: #fff;
 color: #000;
-
+perspective: 1px;
+transform-style: preserve-3d;
+overflow-y: scroll;
+overflow-x: hidden;
 }
 
 
@@ -47,4 +51,39 @@ height: auto;
 
 .main-content{
   flex-grow: 1;
+}
+
+
+.header{
+  box-sizing:border-box;
+min-height: 100vh;
+padding-left: 30px;
+padding-top: 20%;
+transform-style: inherit;
+width: 100vw;
+}
+
+header::before{
+  content: " ";
+display: block;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+z-index: -1;
+transform-origin:center ;
+min-height: 100vh;
+background-image: url(https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1175&q=80);
+
+background-repeat: no-repeat;
+background-size: cover;
+transition: 1s;
+transform: translateZ(-1px) scale(2);
+}
+
+header h1{
+
+color: #222;
+font-size: 42px;
 }
